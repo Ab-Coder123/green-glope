@@ -1,5 +1,5 @@
 import React from "react";
-import { animaldata } from "../Constant/index"; // استيراد بيانات الحيوانات
+import { animaldata } from "../../Constant/index"; // استيراد بيانات الحيوانات
 import Image from "next/image";
 import PropTypes from "prop-types";
 // import { ProductCard } from "../Components/Product/page";
