@@ -1,0 +1,271 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+}
+/* 
+@media (prefers-color-scheme: dark) {
+  :root {
+  }
+} */
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+}
+
+.slider {
+  filter: brightness(0.5) opacity(1);
+}
+
+
+/* إضافة CSS الخاص بمكتبة Leaflet */
+.leaflet-container {
+  height: 400px;
+  width: 100%;
+}
+
+
+/* styles.css */
+.fade-up {
+  animation: fadeUpAnimation 1s ease-in-out forwards;
+}
+
+@keyframes fadeUpAnimation {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+/* card  */
+/* From Uiverse.io by ElSombrero2 */ 
+.card {
+  overflow: visible;
+  width: 250px;
+  height: 324px;
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 300ms;
+  box-shadow: 0px 0px 10px 1px #837e7eee;
+  border-radius: 5px;
+}
+
+.front, .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.back {
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.back::before {
+  position: absolute;
+  content: ' ';
+  display: block;
+  width: 160px;
+  height: 160%;
+  background: linear-gradient(90deg, transparent, #66ff73, #66ff73, #66ff73, #66ff73, transparent);
+  animation: rotation_481 5000ms infinite linear;
+}
+
+.back-content {
+  position: absolute;
+  width: 99%;
+  height: 99%;
+  background-color: #435503;
+  border-radius: 5px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.card:hover .content {
+  transform: rotateY(180deg);
+}
+
+@keyframes rotation_481 {
+  0% {
+    transform: rotateZ(0deg);
+  }
+
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+.front {
+  transform: rotateY(180deg);
+  color: white;
+}
+
+.front .front-content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.front-content .badge {
+  background-color: #00000055;
+  padding: 2px 10px;
+  border-radius: 10px;
+  backdrop-filter: blur(2px);
+  width: fit-content;
+}
+
+.description {
+  box-shadow: 0px 0px 10px 5px #00000088;
+  width: 100%;
+  padding: 10px;
+  background-color: #ccb8b899;
+  border-radius: 5px;
+}
+
+.title {
+  font-size: 11px;
+  max-width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.title p {
+  width: 50%;
+}
+
+.card-footer {
+  color: #ffffff88;
+  margin-top: 5px;
+  font-size: 8px;
+}
+
+.front .img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.img {
+  position: relative;
+}
+
+.circle {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background-color: #447701;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 50;
+  filter: blur(5px);
+  animation: floating 2s infinite ease-in-out;
+  opacity: 0.8; /* تعيين الشفافية الأولية */
+}
+
+/* تخصيص خصائص الدوائر الأخرى */
+#bottom {
+  background-color: #46c42d;
+  left: 50px;
+  top: 50px;
+  width: 150px;
+  height: 150px;
+  animation-delay: -800ms;
+}
+
+#right {
+  background-color: #22ff22;
+  left: 160px;
+  top: -80px;
+  width: 30px;
+  height: 30px;
+  animation-delay: -1800ms;
+}
+
+@keyframes floating {
+  0% {
+    transform: translateY(0px);
+    opacity: 0.2; /* شفافية منخفضة في البداية */
+  }
+
+  50% {
+    transform: translateY(80px);
+    opacity: 1; /* شفافية كاملة في المنتصف */
+  }
+
+  100% {
+    transform: translateY(0px);
+    opacity: 0.2; /* عودة الشفافية إلى البداية */
+  }
+}
+
+
+
+/* From Uiverse.io by ferlagher */ 
+.button {
+  position: relative;
+  font-size: 1em;
+  padding: 0.7em 1.4em;
+  background-color: #22ff22;
+  text-decoration: none;
+  border: none;
+  border-radius: 0.5em;
+  color: #ffffff;
+  box-shadow: 0.5em 0.5em 0.5em rgba(0, 0, 0, 0.3);
+}
+
+.button::before {
+  position: absolute;
+  content: '';
+  height: 0;
+  width: 0;
+  top: 0;
+  left: 0;
+  background: linear-gradient(135deg, rgb(10, 110, 52) 0%, rgb(65, 216, 45) 50%, rgb(4, 150, 48) 50%, rgb(70, 192, 70) 60%);
+  border-radius: 0 0 0.5em 0;
+  box-shadow: 0.2em 0.2em 0.2em rgba(0, 0, 0, 0.3);
+  transition: 0.3s;
+}
+
+.button:hover::before {
+  width: 1.6em;
+  height: 1.6em;
+}
+
+.button:active {
+  box-shadow: 0.2em 0.2em 0.3em rgba(10, 145, 17, 0.3);
+  transform: translate(0.1em, 0.1em);
+}
+
+
+/* contact form */
