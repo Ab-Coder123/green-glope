@@ -69,7 +69,7 @@ export const Animaldatas = ({ animalproduct }) => {
           data-aos="fade-up"
           key={animalprod.id}
         >
-          <Link href={`/Pages/animal/${animalprod.id}`}>
+          <Link href={`/animal/${animalprod.id}`}>
             <div className="mx-auto overflow-hidden w-44 flex flex-col items-center justify-center cursor-pointer bg-[#7fcc2a] rounded-full p-5 px-8">
               <Image src={animalprod.img} alt="animal" className="h-30" />
               <h2 className="text-white font-bold text-xl">

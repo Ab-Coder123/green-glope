@@ -6,7 +6,7 @@ import {
   faLocation,
 } from "@fortawesome/free-solid-svg-icons";
 import Product from "../../Components/Product/page";
-import MapComponent from "../../Components/Map/page"; // تأكد من المسار
+// import MapComponent from "../../Components/Map/page"; // تأكد من المسار
 import imgabout from "../../public/images/2151064509.jpg";
 import Image from "next/image";
 
@@ -138,7 +138,6 @@ function page() {
       </form>
 
       <div className="my-12">
-        <MapComponent />
       </div>
 
       {/* عرض مكون Product هنا */}
