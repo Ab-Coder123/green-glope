@@ -72,8 +72,8 @@ const Navbar = () => {
     transition-all duration-800 ease-in-out
     ${
       scrolling
-        ? "p-9 top-0 duration-500 bg-white shadow-lg transform transition-all hover:shadow-xl"
-        : "href py-20 duration-1000   transform transition-all  text-white"
+        ? `p-9 top-0 duration-500 bg-white shadow-lg transform transition-all hover:shadow-xl`
+        : `href py-20 duration-1000   transform transition-all  text-white`
     }
  `}
         >
